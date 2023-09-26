@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        card_view:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:id="@+id/card_view"
+        card_view:cardCornerRadius="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+
+
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title_view"
+                android:layout_width="wrap_content"
+                android:textSize="25sp"
+                android:layout_height="wrap_content"
+                android:text="@string/item_1"
+                android:textStyle="bold">
+
+            </TextView>
+            <ImageView
+                android:id="@+id/post_image"
+                android:src="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:id="@+id/description_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="@string/description"
+                android:textStyle="normal">
+
+            </TextView>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

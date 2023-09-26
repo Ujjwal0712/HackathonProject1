@@ -18,6 +18,16 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth= FirebaseAuth.getInstance()
+
+
+        // Check if the user is already authenticated
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            // User is already signed in, navigate to the main activity
+            startActivity(Intent(this, AmbassadorHomeActivity::class.java))
+            finish()
+        }
+
         binding.login.setOnClickListener{
             loginuser()
         }
@@ -39,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                     // Login success
                     auth.currentUser
                 }else if (task.isSuccessful){
-                    val intent= Intent(this,StudentHomeActivity::class.java)
+                    val intent= Intent(this,AmbassadorHomeActivity::class.java)
                     startActivity(intent)
                 }
 
