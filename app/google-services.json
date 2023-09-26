@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "374749819301",
+    "project_id": "prog-o-thon-project",
+    "storage_bucket": "prog-o-thon-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374749819301:android:925c22fb5fbf0ea0f9f84c",
+        "android_client_info": {
+          "package_name": "com.example.prog_o_thonproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBuOmM73JHEb6-yqiRISnWVY_4MgX8jY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
