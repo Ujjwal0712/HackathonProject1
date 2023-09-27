@@ -1,4 +1,4 @@
-package com.example.prog_o_thonproject
+package com.example.prog_o_thonproject.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.prog_o_thonproject.ExampleItem
+import com.example.prog_o_thonproject.R
+import com.example.prog_o_thonproject.SecondActivity
 import com.example.prog_o_thonproject.utils2.Constants
 
 class ExampleAdaptor(val context: Context, val element: MutableList<ExampleItem>) :

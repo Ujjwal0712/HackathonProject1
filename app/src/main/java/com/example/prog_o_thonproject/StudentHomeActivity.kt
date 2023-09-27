@@ -3,41 +3,60 @@ package com.example.prog_o_thonproject
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.prog_o_thonproject.databinding.ActivityAmbassadorHomeBinding
+import com.example.prog_o_thonproject.adapter.FeedAdapter
 import com.example.prog_o_thonproject.databinding.ActivityStudentHomeBinding
+import com.example.prog_o_thonproject.fragments.ChatRoom
+import com.example.prog_o_thonproject.fragments.HomeStudent
+import com.example.prog_o_thonproject.fragments.PostFragment
+import com.example.prog_o_thonproject.fragments.ProfileFragment
+import com.example.prog_o_thonproject.fragments.ProfileStudent
+import com.example.prog_o_thonproject.fragments.SearchFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class StudentHomeActivity : AppCompatActivity() {
-    private lateinit var feedAdapter: FeedAdapter
-    private lateinit var binding: ActivityStudentHomeBinding
+
+
+    private lateinit var bottomNavigationView: BottomNavigationView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityStudentHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_student_home)
 
-        binding.profile.setOnClickListener{
-            startActivity(Intent(this, ProfileActivity::class.java))
+
+
+        bottomNavigationView = findViewById(R.id.nav_view2)
+
+        supportFragmentManager.beginTransaction().replace(R.id.container2, HomeStudent()).commit()
+
+        bottomNavigationView.setOnItemSelectedListener {
+            var fragment: Fragment? = null
+
+            when (it.itemId) {
+                R.id.nav_home_student -> {
+                    fragment = HomeStudent()
+                }
+
+
+                R.id.nav_message_student -> {
+                    fragment = ChatRoom()
+                }
+
+                R.id.nav_profile_student -> {
+                    fragment = ProfileStudent()
+                }
+            }
+
+            supportFragmentManager.beginTransaction().replace(R.id.container2,fragment!!).commit()
+            return@setOnItemSelectedListener true
+
         }
 
 
-
-        val exampleList = generateList(10)
-
-        feedAdapter = FeedAdapter(this, exampleList)
-        binding.recyclerView.adapter = feedAdapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.setHasFixedSize(true)
     }
 
-    private fun generateList(size: Int) : MutableList<FeedData>
-    {
-        val list = mutableListOf<FeedData>()
-
-        for ( i in 0 until size ) {
-            list.add(FeedData("Indian Institute of Technology Bombay ${i+1}",caption="The 10 most important things I’ve learned: There is no right or wrong answer on the number of hours you need to work. Sometimes it takes 75 hours"))
-        }
 
 
-        return list
-    }
 }

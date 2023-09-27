@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.prog_o_thonproject.adapter.HorizontalAdapter
 import com.example.prog_o_thonproject.databinding.ActivityProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 

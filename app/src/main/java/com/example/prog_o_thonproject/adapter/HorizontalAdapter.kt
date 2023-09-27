@@ -1,4 +1,4 @@
-package com.example.prog_o_thonproject
+package com.example.prog_o_thonproject.adapter
 
 import android.content.Context
 
@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.prog_o_thonproject.HorizontalData
+import com.example.prog_o_thonproject.R
 
 
 class HorizontalAdapter(val context: Context, private val element:MutableList<HorizontalData>): RecyclerView.Adapter<HorizontalAdapter.HorizontalViewHolder>(){
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorizontalAdapter.HorizontalViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorizontalViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.horizontal_recycler_view,parent,false)
         return HorizontalViewHolder(view)
     }

@@ -1,4 +1,4 @@
-package com.example.prog_o_thonproject
+package com.example.prog_o_thonproject.adapter
 
 import android.content.Context
 
@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.prog_o_thonproject.FeedData
+import com.example.prog_o_thonproject.R
 
 
 class FeedAdapter(val context: Context, private val element:MutableList<FeedData>): RecyclerView.Adapter<FeedAdapter.FeedViewHolder>(){
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedAdapter.FeedViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.feed_recycler_view,parent,false)
         return FeedViewHolder(view)
     }

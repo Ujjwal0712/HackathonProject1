@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.prog_o_thonproject.ExampleAdaptor
+import com.example.prog_o_thonproject.adapter.ExampleAdaptor
 import com.example.prog_o_thonproject.ExampleItem
 import com.example.prog_o_thonproject.databinding.FragmentProfileBinding
 
@@ -24,7 +24,7 @@ class ProfileFragment: Fragment() {
 
 
     ): View {
-        binding = FragmentProfileBinding.inflate(layoutInflater)
+        binding = FragmentProfileBinding.inflate(layoutInflater,container,false)
         return (binding.root)
     }
 
