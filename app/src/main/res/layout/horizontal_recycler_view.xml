@@ -16,25 +16,27 @@
         android:id="@+id/card_view"
         android:layout_width="200dp"
         card_view:cardCornerRadius="25dp"
-        android:layout_height="300dp"
+        android:layout_height="280dp"
         app:cardElevation="10dp"
-        app:cardBackgroundColor="@color/black"
-        android:layout_margin="3dp"
+        app:cardBackgroundColor="#10FFFFFF"
         card_view:layout_constraintBottom_toBottomOf="parent"
         card_view:layout_constraintEnd_toEndOf="parent"
         card_view:layout_constraintStart_toStartOf="parent"
         card_view:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circularImageView"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="15dp"
-                android:foregroundGravity="center"
+                android:padding="10dp"
+                android:layout_gravity="center"
+
                 android:src="@drawable/h"
                 card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
@@ -44,33 +46,34 @@
                 android:id="@+id/institutename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:fontFamily="@font/poppins"
                 android:gravity="center"
+                android:fontFamily="@font/poppins"
                 android:text="Indian Institute of Technology\nBombay"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-
+                android:layout_gravity="center"
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintEnd_toEndOf="parent"
-                card_view:layout_constraintHorizontal_bias="0.0"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toBottomOf="@+id/circularImageView"
-                card_view:layout_constraintVertical_bias="0.137"
+
                 tools:ignore="HardcodedText,TextSizeCheck">
 
             </TextView>
 
             <Button
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:gravity="center"
-                android:background="@drawable/buttonbackground"
+                android:background="@drawable/whitebutton"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
                 android:fontFamily="@font/poppins"
+                android:layout_marginBottom="15dp"
+
                 android:text="View Profile"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toBottomOf="@+id/institutename">
@@ -78,7 +81,7 @@
             </Button>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
 
 
