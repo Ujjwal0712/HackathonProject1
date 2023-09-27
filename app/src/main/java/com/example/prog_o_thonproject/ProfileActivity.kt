@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.prog_o_thonproject.databinding.ActivityProfileBinding
-import com.example.prog_o_thonproject.databinding.ActivityStudentHomeBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var horizontalAdapter: HorizontalAdapter
@@ -15,6 +15,11 @@ class ProfileActivity : AppCompatActivity() {
         binding=ActivityProfileBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        binding.signout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
 
         binding.home1.setOnClickListener{
             startActivity(Intent(this,StudentHomeActivity::class.java))

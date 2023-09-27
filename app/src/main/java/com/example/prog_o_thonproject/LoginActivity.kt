@@ -17,6 +17,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth= FirebaseAuth.getInstance()
+        binding.register1.setOnClickListener {
+            startActivity(Intent(this,CreateAccountActivity::class.java))
+        }
 
 
         // Check if the user is already authenticated

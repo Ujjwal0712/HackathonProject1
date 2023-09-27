@@ -1,39 +1,54 @@
-@file:Suppress("SameParameterValue")
-
 package com.example.prog_o_thonproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.prog_o_thonproject.databinding.ActivityAmbassadorHomeBinding
+import androidx.fragment.app.Fragment
+import com.example.prog_o_thonproject.fragments.PostFragment
+import com.example.prog_o_thonproject.fragments.ProfileFragment
+import com.example.prog_o_thonproject.fragments.SearchFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class AmbassadorHomeActivity : AppCompatActivity() {
-    private lateinit var feedAdapter: FeedAdapter
-    private lateinit var binding: ActivityAmbassadorHomeBinding
+
+    private lateinit var bottomNavigationView: BottomNavigationView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityAmbassadorHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_ambassador_home)
 
 
 
-        val exampleList = generateList(10)
+        bottomNavigationView = findViewById(R.id.nav_view)
 
-        feedAdapter = FeedAdapter(this, exampleList)
-        binding.recyclerView.adapter = feedAdapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.setHasFixedSize(true)
-    }
+        supportFragmentManager.beginTransaction().replace(R.id.container, SearchFragment()).commit()
 
-    private fun generateList(size: Int) : MutableList<FeedData>
-    {
-        val list = mutableListOf<FeedData>()
+        bottomNavigationView.setOnItemSelectedListener {
+            var fragment: Fragment? = null
 
-        for ( i in 0 until size ) {
-            list.add(FeedData("Indian Institute of Technology Bombay ${i+1}",caption="The 10 most important things I’ve learned: There is no right or wrong answer on the number of hours you need to work. Sometimes it takes 75 hours"))
+            when (it.itemId) {
+                R.id.nav_home -> {
+                    fragment = ProfileFragment()
+                }
+
+
+                R.id.nav_search -> {
+                    fragment = SearchFragment()
+                }
+
+                R.id.nav_favorites -> {
+                    fragment = PostFragment()
+                }
+            }
+
+            supportFragmentManager.beginTransaction().replace(R.id.container,fragment!!).commit()
+            return@setOnItemSelectedListener true
+
         }
 
 
-        return list
     }
+
+
+
 }
