@@ -17,7 +17,7 @@ class AmbassadorHomeActivity : AppCompatActivity() {
 
 
 
-        val exampleList = generateList(100)
+        val exampleList = generateList(10)
 
         feedAdapter = FeedAdapter(this, exampleList)
         binding.recyclerView.adapter = feedAdapter
@@ -30,7 +30,7 @@ class AmbassadorHomeActivity : AppCompatActivity() {
         val list = mutableListOf<FeedData>()
 
         for ( i in 0 until size ) {
-            list.add(FeedData("Item ${i+1}",caption="hi"))
+            list.add(FeedData("Indian Institute of Technology Bombay ${i+1}",caption="The 10 most important things I’ve learned: There is no right or wrong answer on the number of hours you need to work. Sometimes it takes 75 hours"))
         }
 
 

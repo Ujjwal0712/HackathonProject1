@@ -1,58 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:background="@color/white"
+
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:padding="5dp"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+
+    android:layout_height="wrap_content">
 
 
     <androidx.cardview.widget.CardView
-        card_view:cardUseCompatPadding="true"
-        android:layout_width="match_parent"
         android:id="@+id/card_view"
-        card_view:cardCornerRadius="10dp"
-        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        card_view:cardElevation="10dp"
+        card_view:cardBackgroundColor="@color/black"
+        android:layout_margin="3dp"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent">
 
-
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:orientation="vertical"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circularImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:foregroundGravity="center"
+                android:src="@drawable/h"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/title_view"
-                android:layout_width="wrap_content"
-                android:textSize="25sp"
+                android:id="@+id/instituename"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="@string/item_1"
-                android:textStyle="bold">
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="Indian Institute of Technology Bombay"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintHorizontal_bias="0.5"
+                card_view:layout_constraintStart_toEndOf="@+id/circularImageView"
+                card_view:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,TextSizeCheck">
 
             </TextView>
-            <ImageView
-                android:id="@+id/post_image"
-                android:src="@color/black"
+
+            <TextView
+                android:id="@+id/caption"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:contentDescription="@string/todo" />
-
-            <TextView
-                android:id="@+id/description_view"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:text="@string/description"
-                android:textStyle="normal">
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins"
+                android:maxLines="2"
+                android:text="The 10 most important things I’ve learned: There is no right or wrong answer on the number of hours you need to work. Sometimes it takes 75 hours one week and 30 the next. Self-care through nutrition, exercise, downtime, unplugging, etc. is a MUST. Burnout happens when you lose control, not when you work hard for long periods of time. If you don’t have a solutions-oriented mentality, you likely won't enjoy working in startups. They often lack structure resources.  Don’t hang around folks who say something “can’t be done”. Go find people that accomplish difficult things against all odds"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintHorizontal_bias="0.0"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@+id/instituename"
+                tools:ignore="HardcodedText,VisualLintLongText">
 
             </TextView>
 
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="TODO"
+                android:gravity="center"
+                android:src="@drawable/photo"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@+id/caption"
+                tools:ignore="ContentDescription,HardcodedText,VisualLintBounds">
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            </ImageView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.cardview.widget.CardView>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

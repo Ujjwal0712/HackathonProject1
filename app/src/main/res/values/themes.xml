@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ProgothonProject" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Base.Theme.ProgothonProject" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
         <!-- Customize your light theme here. -->
         <item name="android:windowTranslucentStatus">true</item>
 

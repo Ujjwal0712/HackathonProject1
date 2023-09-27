@@ -9,7 +9,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-
     private lateinit var auth: FirebaseAuth
     private val duration = Toast.LENGTH_SHORT
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
             // User is already signed in, navigate to the main activity
-            startActivity(Intent(this, AmbassadorHomeActivity::class.java))
+            startActivity(Intent(this, StudentHomeActivity::class.java))
             finish()
         }
 
@@ -49,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                     // Login success
                     auth.currentUser
                 }else if (task.isSuccessful){
-                    val intent= Intent(this,AmbassadorHomeActivity::class.java)
+                    val intent= Intent(this,StudentHomeActivity::class.java)
                     startActivity(intent)
                 }
 

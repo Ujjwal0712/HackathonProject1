@@ -28,8 +28,8 @@ class FeedAdapter(val context: Context, private val element:MutableList<FeedData
     }
     inner class FeedViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
-        val institutename: TextView = view.findViewById<TextView>(R.id.title_view)
-        val caption: TextView = view.findViewById(R.id.description_view)
+        val institutename = view.findViewById<TextView>(R.id.instituename)!!
+        val caption: TextView = view.findViewById(R.id.caption)
 
 
     }
