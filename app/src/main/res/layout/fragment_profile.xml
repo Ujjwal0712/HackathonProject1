@@ -7,52 +7,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="5dp"
     >
 
     <!-- Profile Picture -->
-    <ImageView
-        android:id="@+id/profileImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@color/black"
-        android:scaleType="centerCrop"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/h"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"/>
 
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/john_doe"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
 
-    <!-- User Name -->
-    <TextView
-        android:id="@+id/usernameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="John Doe"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginBottom="8dp"/>
+            <!-- Bio -->
+            <TextView
+                android:id="@+id/bioTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/software_developer"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"
+                tools:ignore="TextContrastCheck" />
 
-    <!-- Bio -->
-    <TextView
-        android:id="@+id/bioTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Software Developer"
-        android:textSize="16sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"/>
+            <!-- Contact Information -->
+            <TextView
+                android:id="@+id/contactInfoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/contact_johndoe_email_com"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"
+                tools:ignore="TextContrastCheck" />
 
-    <!-- Contact Information -->
-    <TextView
-        android:id="@+id/contactInfoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contact: johndoe@email.com"
-        android:textSize="16sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <!-- User Name -->
+
+
+
+    </LinearLayout>
 
     <!-- Edit Profile Button -->
 
@@ -67,30 +84,43 @@
             android:id="@+id/followers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0 followers"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
             android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:text="@string/_0_followers"
+            android:textColor="@android:color/white"
 
-            android:layout_marginRight="10dp"/>
+            android:textSize="18sp"
+            tools:ignore="ButtonStyle,TextContrastCheck" />
 
         <Button
             android:id="@+id/editProfileButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit Profile"
-            android:textSize="18sp"
-            android:textColor="@android:color/white"
-            android:layout_marginLeft="10dp"
             android:layout_gravity="center"
-            />
+            android:layout_marginStart="10dp"
+            android:text="@string/edit_profile"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            tools:ignore="ButtonStyle,TextContrastCheck" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:text="Signout"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            tools:ignore="ButtonStyle,TextContrastCheck">
+
+        </Button>
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="413dp"
-        android:layout_height="733dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

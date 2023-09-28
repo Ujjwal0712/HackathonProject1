@@ -1,9 +1,10 @@
 package com.example.prog_o_thonproject
 
+import PostFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.prog_o_thonproject.fragments.PostFragment
+
 import com.example.prog_o_thonproject.fragments.ProfileFragment
 import com.example.prog_o_thonproject.fragments.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView

@@ -5,10 +5,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.prog_o_thonproject.HorizontalData
 import com.example.prog_o_thonproject.R
+import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 
 
 class HorizontalAdapter(val context: Context, private val element:MutableList<HorizontalData>): RecyclerView.Adapter<HorizontalAdapter.HorizontalViewHolder>(){
@@ -25,11 +28,21 @@ class HorizontalAdapter(val context: Context, private val element:MutableList<Ho
 
     override fun onBindViewHolder(holder: HorizontalViewHolder, position: Int) {
         val currentItem=element[position]
-        holder.institutename.text=currentItem.institutename
+        currentItem.institutename.also { holder.institutename.text = it }
+
+
+        FirebaseStorage.getInstance().reference.child("profile").child("logo.jpg").downloadUrl.addOnSuccessListener { uri ->
+            val imageUrl = uri.toString()
+
+            Picasso.get().load(imageUrl).into(holder.imageView)
+        }
+
+
     }
     inner class HorizontalViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
         val institutename = view.findViewById<TextView>(R.id.institutename)!!
+        val imageView: ImageView = itemView.findViewById(R.id.circularImageView)
 
 
 
